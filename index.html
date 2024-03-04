@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío 21</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Proporcionar informacion de contacto</h2>
+        <form action="">
+            <div class="form__field">
+                <input type="text" name="name" id="name" placeholder="Nombre">
+                <p data-error-message></p>
+            </div>
+            <div class="form__field">
+                <input type="text" name="address" id="address" placeholder="Dirección">
+                <p data-error-message></p>
+            </div>
+            <div class="form__field">
+                <input type="email" name="email" id="email" placeholder="Correo Electrónico">
+                <p data-error-message></p>
+            </div>
+
+            <button data-send-button type="button" class="form__send">Enviar</button>
+        </form>
+    </div>
+
+
+    <div class="data-container">
+
+        <h2>Lista de personas</h2>
+
+        <div data-table-container>
+            <template data-table-template>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Dirección</th>
+                            <th>Correo Electrónico</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody data-table-body>
+
+                    </tbody>
+                </table>
+            </template>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

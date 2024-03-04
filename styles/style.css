@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-gray: #eae4e4;
+    --color-main: #a21caf;
+    --color-secondary: #d946ef;
+    --color-error: #dc2626;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.form-container {
+    background-color: var(--color-gray);
+    border-radius: 12px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    margin-top: 1.5rem;
+    width: 300px;
+}
+
+.form-container h2 {
+    color: var(--color-main);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form__field {
+    width: 100%;
+}
+
+.form__field p {
+    font-size: 0.75rem;
+    color: var(--color-error);
+    margin-top: 0.2rem;
+}
+
+input {
+    border-radius: 6px;
+    border: 1px solid black;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+.form__send {
+    border: none;
+    border-radius: 6px;
+    background-color: var(--color-main);
+    color: white;
+    cursor: pointer;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    padding: 6px 8px;
+    transition: all 0.3s;
+}
+
+.form__send:hover {
+    background-color: var(--color-secondary);
+}
+
+.data-container {
+    margin-top: 2rem;
+    padding: 0.25rem;
+}
+
+.data-container h2 {
+    color: var(--color-main);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 6px 10px;
+    margin: 0 auto;
+}
+
+th {
+    color: var(--color-secondary);
+}
+
+td {
+    font-size: 0.9rem;
+}
+
+.deleteUser {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
