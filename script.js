@@ -45,7 +45,6 @@ function saveUserToLocalStorage (user) {
     } else {
         localStorage.setItem ('users', JSON.stringify([ user ]))
     }
-    console.log(localStorage.getItem('users'))
 }
 
 //event listeners
@@ -78,14 +77,20 @@ sendFormBtn.addEventListener('click', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const users = JSON.parse(localStorage.getItem('users'));
-    console.log(users)
-    if(!users) return
+    if(!users || users.length === 0) {
+        userIdCount = 0;
+        localStorage.setItem('userIdCount', userIdCount);
+
+        const dataContainer = document.querySelector('.data-container');
+        dataContainer.style.display = 'none';
+
+        return
+    }
 
     const tableContainer = document.querySelector('[data-table-container]');
     const tableTemplate = document.querySelector('[data-table-template]');
 
     const table = tableTemplate.content.cloneNode(true).children[0];
-    console.log(table)
 
     const tableBody = table.querySelector('[data-table-body]');
     
@@ -110,11 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
         deleteUserBtn.classList.add('deleteUser');
         deleteUserBtn.addEventListener('click', () => {
             const userToRemoveIndex = users.findIndex(user => user.id == userId.innerText);
-            console.log(userToRemoveIndex)
             users.splice(userToRemoveIndex, 1);
             tableBody.removeChild(tableRow);
-            console.log(users)
             localStorage.setItem('users', JSON.stringify(users));
+            location.reload();
         })
         deleteUser.appendChild(deleteUserBtn)
         
